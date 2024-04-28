@@ -35,8 +35,36 @@ console.log(number % 2 === 0);
 
 /* 3.- En este ejercicio debes convertir a segundos una medida de tiempo dada en horas y minutos.
 ¿Crees que es necesario recordar que una hora son 60 minutos y cada minuto son 60 segundos? ¿Por dónde mostraras el resultado?
-
+ 
+-Declaramos la variables y se utiliza "promt" para que el usuario ingrese la cantidad de horas y de minutos.
+-El valor de la variable "seconds" sera la suma de las dos variables anteriormente declaradas y llevadas a 
+segundos por medio del operador aritmeco de multiplicacion "*"
 */
 
-let seconds= 60
-let hours= 60
+let hoursAssing= prompt("Ingrese la cantidad de horas")
+let minutesAssing= prompt("Ingrese la cantidad de minutos")
+let seconds= (hoursAssing*60*60)+(minutesAssing*60)
+
+if (isNaN(hoursAssing)) {
+  alert("El caracter ingresado no es un numero")
+} 
+if (isNaN(minutesAssing)) {
+  alert("El caracter ingresado no es un numero")
+} 
+alert(seconds," Segundos");
+console.log (seconds,"Segundos");
+
+const p3= document.querySelector("#resultSeconds")
+p3.innerHTML="Cantidad de Segundos"+ " "+ seconds
+
+/* 
+4.-  Muestra en un aviso (alert), cuánto debe pagar un usuario por un producto con IVA(21%). ¿Tienes alguna manera de preguntarle el precio del producto al usuario?
+*/
+
+let priceProduct=parseInt(prompt("Ingrese el valor del producto."));
+if (isNaN(priceProduct)) {
+  alert("El caracter ingresado no es un numero")
+}
+let priceIva= (0.21*priceProduct);
+let priceTotal= priceProduct+priceIva
+console.log("Precio con IVA ", priceTotal);
